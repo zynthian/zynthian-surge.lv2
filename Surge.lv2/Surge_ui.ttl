@@ -1,0 +1,22 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix opts: <http://lv2plug.in/ns/ext/options#> .
+@prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix urid: <http://lv2plug.in/ns/ext/urid#> .
+@prefix unit: <http://lv2plug.in/ns/extensions/units#> .
+@prefix rsz:  <http://lv2plug.in/ns/ext/resize-port#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix time: <http://lv2plug.in/ns/ext/time#> .
+@prefix state: <http://lv2plug.in/ns/ext/state#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://surge-synthesizer.github.io/lv2/surge#UI>
+    lv2:optionalFeature ui:parent,
+                        ui:resize,
+                        ui:noUserResize ;
+    lv2:requiredFeature ui:idleInterface ,
+                        <http://lv2plug.in/ns/ext/instance-access> ;
+    lv2:extensionData ui:idleInterface .

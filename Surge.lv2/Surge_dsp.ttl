@@ -1,0 +1,5308 @@
+@prefix lv2:  <http://lv2plug.in/ns/lv2core#> .
+@prefix opts: <http://lv2plug.in/ns/ext/options#> .
+@prefix ui:   <http://lv2plug.in/ns/extensions/ui#> .
+@prefix atom: <http://lv2plug.in/ns/ext/atom#> .
+@prefix urid: <http://lv2plug.in/ns/ext/urid#> .
+@prefix unit: <http://lv2plug.in/ns/extensions/units#> .
+@prefix rsz:  <http://lv2plug.in/ns/ext/resize-port#> .
+@prefix midi: <http://lv2plug.in/ns/ext/midi#> .
+@prefix time: <http://lv2plug.in/ns/ext/time#> .
+@prefix state: <http://lv2plug.in/ns/ext/state#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix doap: <http://usefulinc.com/ns/doap#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+
+<https://surge-synthesizer.github.io/lv2/surge>
+    doap:name "Surge" ;
+    doap:license <https://www.gnu.org/licenses/gpl-3.0.en.html> ;
+    doap:maintainer [
+        foaf:name "Vember Audio" ;
+        foaf:homepage <https://surge-synthesizer.github.io/> ;
+    ] ;
+    ui:ui <https://surge-synthesizer.github.io/lv2/surge#UI> ;
+    lv2:optionalFeature lv2:hardRTCapable ;
+    lv2:requiredFeature urid:map ;
+    lv2:extensionData state:interface ;
+    lv2:port [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 0 ;
+        lv2:symbol "meta_cc1" ;
+        lv2:name "C1:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 1 ;
+        lv2:symbol "meta_cc2" ;
+        lv2:name "C2:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 2 ;
+        lv2:symbol "meta_cc3" ;
+        lv2:name "C3:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 3 ;
+        lv2:symbol "meta_cc4" ;
+        lv2:name "C4:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 4 ;
+        lv2:symbol "meta_cc5" ;
+        lv2:name "C5:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 5 ;
+        lv2:symbol "meta_cc6" ;
+        lv2:name "C6:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 6 ;
+        lv2:symbol "meta_cc7" ;
+        lv2:name "C7:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 7 ;
+        lv2:symbol "meta_cc8" ;
+        lv2:name "C8:-" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 8 ;
+        lv2:symbol "fx_bypass" ;
+        lv2:name "FX Bypass" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 9 ;
+        lv2:symbol "fx1_type" ;
+        lv2:name "FX A1 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 10 ;
+        lv2:symbol "fx1_p0" ;
+        lv2:name "FX A1 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 11 ;
+        lv2:symbol "fx1_p1" ;
+        lv2:name "FX A1 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 12 ;
+        lv2:symbol "fx1_p2" ;
+        lv2:name "FX A1 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 13 ;
+        lv2:symbol "fx1_p3" ;
+        lv2:name "FX A1 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 14 ;
+        lv2:symbol "fx1_p4" ;
+        lv2:name "FX A1 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 15 ;
+        lv2:symbol "fx1_p5" ;
+        lv2:name "FX A1 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 16 ;
+        lv2:symbol "fx1_p6" ;
+        lv2:name "FX A1 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 17 ;
+        lv2:symbol "fx1_p7" ;
+        lv2:name "FX A1 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 18 ;
+        lv2:symbol "fx1_p8" ;
+        lv2:name "FX A1 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 19 ;
+        lv2:symbol "fx1_p9" ;
+        lv2:name "FX A1 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 20 ;
+        lv2:symbol "fx1_p10" ;
+        lv2:name "FX A1 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 21 ;
+        lv2:symbol "fx1_p11" ;
+        lv2:name "FX A1 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 22 ;
+        lv2:symbol "fx2_type" ;
+        lv2:name "FX A2 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 23 ;
+        lv2:symbol "fx2_p0" ;
+        lv2:name "FX A2 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 24 ;
+        lv2:symbol "fx2_p1" ;
+        lv2:name "FX A2 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 25 ;
+        lv2:symbol "fx2_p2" ;
+        lv2:name "FX A2 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 26 ;
+        lv2:symbol "fx2_p3" ;
+        lv2:name "FX A2 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 27 ;
+        lv2:symbol "fx2_p4" ;
+        lv2:name "FX A2 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 28 ;
+        lv2:symbol "fx2_p5" ;
+        lv2:name "FX A2 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 29 ;
+        lv2:symbol "fx2_p6" ;
+        lv2:name "FX A2 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 30 ;
+        lv2:symbol "fx2_p7" ;
+        lv2:name "FX A2 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 31 ;
+        lv2:symbol "fx2_p8" ;
+        lv2:name "FX A2 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 32 ;
+        lv2:symbol "fx2_p9" ;
+        lv2:name "FX A2 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 33 ;
+        lv2:symbol "fx2_p10" ;
+        lv2:name "FX A2 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 34 ;
+        lv2:symbol "fx2_p11" ;
+        lv2:name "FX A2 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 35 ;
+        lv2:symbol "fx3_type" ;
+        lv2:name "FX B1 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 36 ;
+        lv2:symbol "fx3_p0" ;
+        lv2:name "FX B1 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 37 ;
+        lv2:symbol "fx3_p1" ;
+        lv2:name "FX B1 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 38 ;
+        lv2:symbol "fx3_p2" ;
+        lv2:name "FX B1 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 39 ;
+        lv2:symbol "fx3_p3" ;
+        lv2:name "FX B1 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 40 ;
+        lv2:symbol "fx3_p4" ;
+        lv2:name "FX B1 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 41 ;
+        lv2:symbol "fx3_p5" ;
+        lv2:name "FX B1 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 42 ;
+        lv2:symbol "fx3_p6" ;
+        lv2:name "FX B1 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 43 ;
+        lv2:symbol "fx3_p7" ;
+        lv2:name "FX B1 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 44 ;
+        lv2:symbol "fx3_p8" ;
+        lv2:name "FX B1 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 45 ;
+        lv2:symbol "fx3_p9" ;
+        lv2:name "FX B1 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 46 ;
+        lv2:symbol "fx3_p10" ;
+        lv2:name "FX B1 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 47 ;
+        lv2:symbol "fx3_p11" ;
+        lv2:name "FX B1 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 48 ;
+        lv2:symbol "fx4_type" ;
+        lv2:name "FX B2 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 49 ;
+        lv2:symbol "fx4_p0" ;
+        lv2:name "FX B2 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 50 ;
+        lv2:symbol "fx4_p1" ;
+        lv2:name "FX B2 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 51 ;
+        lv2:symbol "fx4_p2" ;
+        lv2:name "FX B2 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 52 ;
+        lv2:symbol "fx4_p3" ;
+        lv2:name "FX B2 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 53 ;
+        lv2:symbol "fx4_p4" ;
+        lv2:name "FX B2 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 54 ;
+        lv2:symbol "fx4_p5" ;
+        lv2:name "FX B2 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 55 ;
+        lv2:symbol "fx4_p6" ;
+        lv2:name "FX B2 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 56 ;
+        lv2:symbol "fx4_p7" ;
+        lv2:name "FX B2 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 57 ;
+        lv2:symbol "fx4_p8" ;
+        lv2:name "FX B2 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 58 ;
+        lv2:symbol "fx4_p9" ;
+        lv2:name "FX B2 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 59 ;
+        lv2:symbol "fx4_p10" ;
+        lv2:name "FX B2 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 60 ;
+        lv2:symbol "fx4_p11" ;
+        lv2:name "FX B2 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 61 ;
+        lv2:symbol "fx5_type" ;
+        lv2:name "FX S1 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 62 ;
+        lv2:symbol "fx5_p0" ;
+        lv2:name "FX S1 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 63 ;
+        lv2:symbol "fx5_p1" ;
+        lv2:name "FX S1 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 64 ;
+        lv2:symbol "fx5_p2" ;
+        lv2:name "FX S1 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 65 ;
+        lv2:symbol "fx5_p3" ;
+        lv2:name "FX S1 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 66 ;
+        lv2:symbol "fx5_p4" ;
+        lv2:name "FX S1 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 67 ;
+        lv2:symbol "fx5_p5" ;
+        lv2:name "FX S1 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 68 ;
+        lv2:symbol "fx5_p6" ;
+        lv2:name "FX S1 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 69 ;
+        lv2:symbol "fx5_p7" ;
+        lv2:name "FX S1 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 70 ;
+        lv2:symbol "fx5_p8" ;
+        lv2:name "FX S1 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 71 ;
+        lv2:symbol "fx5_p9" ;
+        lv2:name "FX S1 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 72 ;
+        lv2:symbol "fx5_p10" ;
+        lv2:name "FX S1 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 73 ;
+        lv2:symbol "fx5_p11" ;
+        lv2:name "FX S1 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 74 ;
+        lv2:symbol "fx6_type" ;
+        lv2:name "FX S2 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 75 ;
+        lv2:symbol "fx6_p0" ;
+        lv2:name "FX S2 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 76 ;
+        lv2:symbol "fx6_p1" ;
+        lv2:name "FX S2 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 77 ;
+        lv2:symbol "fx6_p2" ;
+        lv2:name "FX S2 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 78 ;
+        lv2:symbol "fx6_p3" ;
+        lv2:name "FX S2 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 79 ;
+        lv2:symbol "fx6_p4" ;
+        lv2:name "FX S2 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 80 ;
+        lv2:symbol "fx6_p5" ;
+        lv2:name "FX S2 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 81 ;
+        lv2:symbol "fx6_p6" ;
+        lv2:name "FX S2 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 82 ;
+        lv2:symbol "fx6_p7" ;
+        lv2:name "FX S2 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 83 ;
+        lv2:symbol "fx6_p8" ;
+        lv2:name "FX S2 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 84 ;
+        lv2:symbol "fx6_p9" ;
+        lv2:name "FX S2 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 85 ;
+        lv2:symbol "fx6_p10" ;
+        lv2:name "FX S2 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 86 ;
+        lv2:symbol "fx6_p11" ;
+        lv2:name "FX S2 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 87 ;
+        lv2:symbol "fx7_type" ;
+        lv2:name "FX M1 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 88 ;
+        lv2:symbol "fx7_p0" ;
+        lv2:name "FX M1 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 89 ;
+        lv2:symbol "fx7_p1" ;
+        lv2:name "FX M1 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 90 ;
+        lv2:symbol "fx7_p2" ;
+        lv2:name "FX M1 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 91 ;
+        lv2:symbol "fx7_p3" ;
+        lv2:name "FX M1 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 92 ;
+        lv2:symbol "fx7_p4" ;
+        lv2:name "FX M1 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 93 ;
+        lv2:symbol "fx7_p5" ;
+        lv2:name "FX M1 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 94 ;
+        lv2:symbol "fx7_p6" ;
+        lv2:name "FX M1 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 95 ;
+        lv2:symbol "fx7_p7" ;
+        lv2:name "FX M1 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 96 ;
+        lv2:symbol "fx7_p8" ;
+        lv2:name "FX M1 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 97 ;
+        lv2:symbol "fx7_p9" ;
+        lv2:name "FX M1 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 98 ;
+        lv2:symbol "fx7_p10" ;
+        lv2:name "FX M1 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 99 ;
+        lv2:symbol "fx7_p11" ;
+        lv2:name "FX M1 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 100 ;
+        lv2:symbol "fx8_type" ;
+        lv2:name "FX M2 FX type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 101 ;
+        lv2:symbol "fx8_p0" ;
+        lv2:name "FX M2 Param 1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 102 ;
+        lv2:symbol "fx8_p1" ;
+        lv2:name "FX M2 Param 2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 103 ;
+        lv2:symbol "fx8_p2" ;
+        lv2:name "FX M2 Param 3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 104 ;
+        lv2:symbol "fx8_p3" ;
+        lv2:name "FX M2 Param 4" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 105 ;
+        lv2:symbol "fx8_p4" ;
+        lv2:name "FX M2 Param 5" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 106 ;
+        lv2:symbol "fx8_p5" ;
+        lv2:name "FX M2 Param 6" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 107 ;
+        lv2:symbol "fx8_p6" ;
+        lv2:name "FX M2 Param 7" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 108 ;
+        lv2:symbol "fx8_p7" ;
+        lv2:name "FX M2 Param 8" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 109 ;
+        lv2:symbol "fx8_p8" ;
+        lv2:name "FX M2 Param 9" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 110 ;
+        lv2:symbol "fx8_p9" ;
+        lv2:name "FX M2 Param 10" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 111 ;
+        lv2:symbol "fx8_p10" ;
+        lv2:name "FX M2 Param 11" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 112 ;
+        lv2:symbol "fx8_p11" ;
+        lv2:name "FX M2 Param 12" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 113 ;
+        lv2:symbol "a_octave" ;
+        lv2:name "Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 114 ;
+        lv2:symbol "a_pitch" ;
+        lv2:name "Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 115 ;
+        lv2:symbol "a_portamento" ;
+        lv2:name "Portamento" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 116 ;
+        lv2:symbol "a_osc1_type" ;
+        lv2:name "Osc1 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 117 ;
+        lv2:symbol "a_osc1_octave" ;
+        lv2:name "Osc1 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 118 ;
+        lv2:symbol "a_osc1_pitch" ;
+        lv2:name "Osc1 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 119 ;
+        lv2:symbol "a_osc1_param0" ;
+        lv2:name "Osc1 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 120 ;
+        lv2:symbol "a_osc1_param1" ;
+        lv2:name "Osc1 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 121 ;
+        lv2:symbol "a_osc1_param2" ;
+        lv2:name "Osc1 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 122 ;
+        lv2:symbol "a_osc1_param3" ;
+        lv2:name "Osc1 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 123 ;
+        lv2:symbol "a_osc1_param4" ;
+        lv2:name "Osc1 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 124 ;
+        lv2:symbol "a_osc1_param5" ;
+        lv2:name "Osc1 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 125 ;
+        lv2:symbol "a_osc1_param6" ;
+        lv2:name "Osc1 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 126 ;
+        lv2:symbol "a_osc1_keytrack" ;
+        lv2:name "Osc1 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 127 ;
+        lv2:symbol "a_osc1_retrigger" ;
+        lv2:name "Osc1 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 128 ;
+        lv2:symbol "a_osc2_type" ;
+        lv2:name "Osc2 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 129 ;
+        lv2:symbol "a_osc2_octave" ;
+        lv2:name "Osc2 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 130 ;
+        lv2:symbol "a_osc2_pitch" ;
+        lv2:name "Osc2 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 131 ;
+        lv2:symbol "a_osc2_param0" ;
+        lv2:name "Osc2 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 132 ;
+        lv2:symbol "a_osc2_param1" ;
+        lv2:name "Osc2 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 133 ;
+        lv2:symbol "a_osc2_param2" ;
+        lv2:name "Osc2 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 134 ;
+        lv2:symbol "a_osc2_param3" ;
+        lv2:name "Osc2 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 135 ;
+        lv2:symbol "a_osc2_param4" ;
+        lv2:name "Osc2 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 136 ;
+        lv2:symbol "a_osc2_param5" ;
+        lv2:name "Osc2 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 137 ;
+        lv2:symbol "a_osc2_param6" ;
+        lv2:name "Osc2 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 138 ;
+        lv2:symbol "a_osc2_keytrack" ;
+        lv2:name "Osc2 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 139 ;
+        lv2:symbol "a_osc2_retrigger" ;
+        lv2:name "Osc2 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 140 ;
+        lv2:symbol "a_osc3_type" ;
+        lv2:name "Osc3 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 141 ;
+        lv2:symbol "a_osc3_octave" ;
+        lv2:name "Osc3 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 142 ;
+        lv2:symbol "a_osc3_pitch" ;
+        lv2:name "Osc3 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 143 ;
+        lv2:symbol "a_osc3_param0" ;
+        lv2:name "Osc3 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 144 ;
+        lv2:symbol "a_osc3_param1" ;
+        lv2:name "Osc3 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 145 ;
+        lv2:symbol "a_osc3_param2" ;
+        lv2:name "Osc3 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 146 ;
+        lv2:symbol "a_osc3_param3" ;
+        lv2:name "Osc3 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 147 ;
+        lv2:symbol "a_osc3_param4" ;
+        lv2:name "Osc3 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 148 ;
+        lv2:symbol "a_osc3_param5" ;
+        lv2:name "Osc3 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 149 ;
+        lv2:symbol "a_osc3_param6" ;
+        lv2:name "Osc3 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 150 ;
+        lv2:symbol "a_osc3_keytrack" ;
+        lv2:name "Osc3 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 151 ;
+        lv2:symbol "a_osc3_retrigger" ;
+        lv2:name "Osc3 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 152 ;
+        lv2:symbol "a_polymode" ;
+        lv2:name "Polymode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 153 ;
+        lv2:symbol "a_fm_switch" ;
+        lv2:name "FM Routing" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 154 ;
+        lv2:symbol "a_fm_depth" ;
+        lv2:name "FM Depth" ;
+        lv2:default 0.33333334 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 155 ;
+        lv2:symbol "a_drift" ;
+        lv2:name "Osc Drift" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 156 ;
+        lv2:symbol "a_noisecol" ;
+        lv2:name "Noise Color" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 157 ;
+        lv2:symbol "a_ktrkroot" ;
+        lv2:name "Keytrack Root Key" ;
+        lv2:default 0.47271654 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 158 ;
+        lv2:symbol "a_volume" ;
+        lv2:name "Volume" ;
+        lv2:default 0.89089900 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 159 ;
+        lv2:symbol "a_pan" ;
+        lv2:name "Pan" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 160 ;
+        lv2:symbol "a_pan2" ;
+        lv2:name "Width" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 161 ;
+        lv2:symbol "a_send_fx_1" ;
+        lv2:name "FX1 Send" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 162 ;
+        lv2:symbol "a_send_fx_2" ;
+        lv2:name "FX2 Send" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 163 ;
+        lv2:symbol "a_level_o1" ;
+        lv2:name "Osc1 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 164 ;
+        lv2:symbol "a_mute_o1" ;
+        lv2:name "Osc1 Mute" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 165 ;
+        lv2:symbol "a_solo_o1" ;
+        lv2:name "Osc1 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 166 ;
+        lv2:symbol "a_route_o1" ;
+        lv2:name "Osc1 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 167 ;
+        lv2:symbol "a_level_o2" ;
+        lv2:name "Osc2 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 168 ;
+        lv2:symbol "a_mute_o2" ;
+        lv2:name "Osc2 Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 169 ;
+        lv2:symbol "a_solo_o2" ;
+        lv2:name "Osc2 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 170 ;
+        lv2:symbol "a_route_o2" ;
+        lv2:name "Osc2 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 171 ;
+        lv2:symbol "a_level_o3" ;
+        lv2:name "Osc3 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 172 ;
+        lv2:symbol "a_mute_o3" ;
+        lv2:name "Osc3 Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 173 ;
+        lv2:symbol "a_solo_o3" ;
+        lv2:name "Osc3 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 174 ;
+        lv2:symbol "a_route_o3" ;
+        lv2:name "Osc3 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 175 ;
+        lv2:symbol "a_level_ring12" ;
+        lv2:name "Ring Level 1x2" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 176 ;
+        lv2:symbol "a_mute_ring12" ;
+        lv2:name "Ring Mute 1x2" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 177 ;
+        lv2:symbol "a_solo_ring12" ;
+        lv2:name "Ring Solo 1x2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 178 ;
+        lv2:symbol "a_route_ring12" ;
+        lv2:name "Ring Route 1x2" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 179 ;
+        lv2:symbol "a_level_ring23" ;
+        lv2:name "Ring Level 2x3" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 180 ;
+        lv2:symbol "a_mute_ring23" ;
+        lv2:name "Ring Mute 2x3" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 181 ;
+        lv2:symbol "a_solo_ring23" ;
+        lv2:name "Ring Solo 2x3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 182 ;
+        lv2:symbol "a_route_ring23" ;
+        lv2:name "Ring Route 2x3" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 183 ;
+        lv2:symbol "a_level_noise" ;
+        lv2:name "Noise Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 184 ;
+        lv2:symbol "a_mute_noise" ;
+        lv2:name "Noise Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 185 ;
+        lv2:symbol "a_solo_noise" ;
+        lv2:name "Noise Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 186 ;
+        lv2:symbol "a_route_noise" ;
+        lv2:name "Noise Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 187 ;
+        lv2:symbol "a_level_pfg" ;
+        lv2:name "Pre-Filter Gain" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 188 ;
+        lv2:symbol "a_pbrange_up" ;
+        lv2:name "Pitch Bend Range (up)" ;
+        lv2:default 0.08750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 189 ;
+        lv2:symbol "a_pbrange_dn" ;
+        lv2:name "Pitch Bend Range (down)" ;
+        lv2:default 0.08750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 190 ;
+        lv2:symbol "a_vca_level" ;
+        lv2:name "Gain" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 191 ;
+        lv2:symbol "a_vca_velsense" ;
+        lv2:name "Velocity > Gain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 192 ;
+        lv2:symbol "a_feedback" ;
+        lv2:name "Feedback" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 193 ;
+        lv2:symbol "a_fb_config" ;
+        lv2:name "Filter Configuration" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 194 ;
+        lv2:symbol "a_f_balance" ;
+        lv2:name "Filter Balance" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 195 ;
+        lv2:symbol "a_lowcut" ;
+        lv2:name "High Pass" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 196 ;
+        lv2:symbol "a_ws_type" ;
+        lv2:name "Waveshaper Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 197 ;
+        lv2:symbol "a_ws_drive" ;
+        lv2:name "Waveshaper Drive" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 198 ;
+        lv2:symbol "a_filter1_type" ;
+        lv2:name "F1 Filter Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 199 ;
+        lv2:symbol "a_filter1_subtype" ;
+        lv2:name "F1 Filter Subtype" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 200 ;
+        lv2:symbol "a_filter1_cutoff" ;
+        lv2:name "F1 Cutoff" ;
+        lv2:default 0.48461539 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 201 ;
+        lv2:symbol "a_filter1_resonance" ;
+        lv2:name "F1 Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 202 ;
+        lv2:symbol "a_filter1_envmod" ;
+        lv2:name "F1 Envmod" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 203 ;
+        lv2:symbol "a_filter1_keytrack" ;
+        lv2:name "F1 Keytrack" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 204 ;
+        lv2:symbol "a_filter2_type" ;
+        lv2:name "F2 Filter Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 205 ;
+        lv2:symbol "a_filter2_subtype" ;
+        lv2:name "F2 Filter Subtype" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 206 ;
+        lv2:symbol "a_filter2_cutoff" ;
+        lv2:name "F2 Cutoff" ;
+        lv2:default 0.48461539 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 207 ;
+        lv2:symbol "a_f2_cf_is_offset" ;
+        lv2:name "Is Offset to F1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 208 ;
+        lv2:symbol "a_filter2_resonance" ;
+        lv2:name "F2 Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 209 ;
+        lv2:symbol "a_f2_link_resonance" ;
+        lv2:name "Link Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 210 ;
+        lv2:symbol "a_filter2_envmod" ;
+        lv2:name "F2 Envmod" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 211 ;
+        lv2:symbol "a_filter2_keytrack" ;
+        lv2:name "F2 Keytrack" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 212 ;
+        lv2:symbol "a_env1_attack" ;
+        lv2:name "AEG Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 213 ;
+        lv2:symbol "a_env1_attack_shape" ;
+        lv2:name "AEG Attack Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 214 ;
+        lv2:symbol "a_env1_decay" ;
+        lv2:name "AEG Decay" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 215 ;
+        lv2:symbol "a_env1_decay_shape" ;
+        lv2:name "AEG Decay Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 216 ;
+        lv2:symbol "a_env1_sustain" ;
+        lv2:name "AEG Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 217 ;
+        lv2:symbol "a_env1_release" ;
+        lv2:name "AEG Release" ;
+        lv2:default 0.23076923 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 218 ;
+        lv2:symbol "a_env1_release_shape" ;
+        lv2:name "AEG Release Shape" ;
+        lv2:default 0.99500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 219 ;
+        lv2:symbol "a_env1_mode" ;
+        lv2:name "AEG Mode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 220 ;
+        lv2:symbol "a_env2_attack" ;
+        lv2:name "FEG Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 221 ;
+        lv2:symbol "a_env2_attack_shape" ;
+        lv2:name "FEG Attack Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 222 ;
+        lv2:symbol "a_env2_decay" ;
+        lv2:name "FEG Decay" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 223 ;
+        lv2:symbol "a_env2_decay_shape" ;
+        lv2:name "FEG Decay Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 224 ;
+        lv2:symbol "a_env2_sustain" ;
+        lv2:name "FEG Sustain" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 225 ;
+        lv2:symbol "a_env2_release" ;
+        lv2:name "FEG Release" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 226 ;
+        lv2:symbol "a_env2_release_shape" ;
+        lv2:name "FEG Release Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 227 ;
+        lv2:symbol "a_env2_mode" ;
+        lv2:name "FEG Mode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 228 ;
+        lv2:symbol "a_lfo0_shape" ;
+        lv2:name "LFO1 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 229 ;
+        lv2:symbol "a_lfo0_rate" ;
+        lv2:name "LFO1 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 230 ;
+        lv2:symbol "a_lfo0_phase" ;
+        lv2:name "LFO1 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 231 ;
+        lv2:symbol "a_lfo0_magnitude" ;
+        lv2:name "LFO1 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 232 ;
+        lv2:symbol "a_lfo0_deform" ;
+        lv2:name "LFO1 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 233 ;
+        lv2:symbol "a_lfo0_trigmode" ;
+        lv2:name "LFO1 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 234 ;
+        lv2:symbol "a_lfo0_unipolar" ;
+        lv2:name "LFO1 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 235 ;
+        lv2:symbol "a_lfo0_delay" ;
+        lv2:name "LFO1 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 236 ;
+        lv2:symbol "a_lfo0_attack" ;
+        lv2:name "LFO1 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 237 ;
+        lv2:symbol "a_lfo0_hold" ;
+        lv2:name "LFO1 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 238 ;
+        lv2:symbol "a_lfo0_decay" ;
+        lv2:name "LFO1 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 239 ;
+        lv2:symbol "a_lfo0_sustain" ;
+        lv2:name "LFO1 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 240 ;
+        lv2:symbol "a_lfo0_release" ;
+        lv2:name "LFO1 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 241 ;
+        lv2:symbol "a_lfo1_shape" ;
+        lv2:name "LFO2 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 242 ;
+        lv2:symbol "a_lfo1_rate" ;
+        lv2:name "LFO2 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 243 ;
+        lv2:symbol "a_lfo1_phase" ;
+        lv2:name "LFO2 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 244 ;
+        lv2:symbol "a_lfo1_magnitude" ;
+        lv2:name "LFO2 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 245 ;
+        lv2:symbol "a_lfo1_deform" ;
+        lv2:name "LFO2 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 246 ;
+        lv2:symbol "a_lfo1_trigmode" ;
+        lv2:name "LFO2 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 247 ;
+        lv2:symbol "a_lfo1_unipolar" ;
+        lv2:name "LFO2 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 248 ;
+        lv2:symbol "a_lfo1_delay" ;
+        lv2:name "LFO2 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 249 ;
+        lv2:symbol "a_lfo1_attack" ;
+        lv2:name "LFO2 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 250 ;
+        lv2:symbol "a_lfo1_hold" ;
+        lv2:name "LFO2 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 251 ;
+        lv2:symbol "a_lfo1_decay" ;
+        lv2:name "LFO2 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 252 ;
+        lv2:symbol "a_lfo1_sustain" ;
+        lv2:name "LFO2 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 253 ;
+        lv2:symbol "a_lfo1_release" ;
+        lv2:name "LFO2 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 254 ;
+        lv2:symbol "a_lfo2_shape" ;
+        lv2:name "LFO3 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 255 ;
+        lv2:symbol "a_lfo2_rate" ;
+        lv2:name "LFO3 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 256 ;
+        lv2:symbol "a_lfo2_phase" ;
+        lv2:name "LFO3 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 257 ;
+        lv2:symbol "a_lfo2_magnitude" ;
+        lv2:name "LFO3 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 258 ;
+        lv2:symbol "a_lfo2_deform" ;
+        lv2:name "LFO3 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 259 ;
+        lv2:symbol "a_lfo2_trigmode" ;
+        lv2:name "LFO3 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 260 ;
+        lv2:symbol "a_lfo2_unipolar" ;
+        lv2:name "LFO3 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 261 ;
+        lv2:symbol "a_lfo2_delay" ;
+        lv2:name "LFO3 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 262 ;
+        lv2:symbol "a_lfo2_attack" ;
+        lv2:name "LFO3 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 263 ;
+        lv2:symbol "a_lfo2_hold" ;
+        lv2:name "LFO3 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 264 ;
+        lv2:symbol "a_lfo2_decay" ;
+        lv2:name "LFO3 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 265 ;
+        lv2:symbol "a_lfo2_sustain" ;
+        lv2:name "LFO3 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 266 ;
+        lv2:symbol "a_lfo2_release" ;
+        lv2:name "LFO3 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 267 ;
+        lv2:symbol "a_lfo3_shape" ;
+        lv2:name "LFO4 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 268 ;
+        lv2:symbol "a_lfo3_rate" ;
+        lv2:name "LFO4 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 269 ;
+        lv2:symbol "a_lfo3_phase" ;
+        lv2:name "LFO4 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 270 ;
+        lv2:symbol "a_lfo3_magnitude" ;
+        lv2:name "LFO4 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 271 ;
+        lv2:symbol "a_lfo3_deform" ;
+        lv2:name "LFO4 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 272 ;
+        lv2:symbol "a_lfo3_trigmode" ;
+        lv2:name "LFO4 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 273 ;
+        lv2:symbol "a_lfo3_unipolar" ;
+        lv2:name "LFO4 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 274 ;
+        lv2:symbol "a_lfo3_delay" ;
+        lv2:name "LFO4 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 275 ;
+        lv2:symbol "a_lfo3_attack" ;
+        lv2:name "LFO4 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 276 ;
+        lv2:symbol "a_lfo3_hold" ;
+        lv2:name "LFO4 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 277 ;
+        lv2:symbol "a_lfo3_decay" ;
+        lv2:name "LFO4 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 278 ;
+        lv2:symbol "a_lfo3_sustain" ;
+        lv2:name "LFO4 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 279 ;
+        lv2:symbol "a_lfo3_release" ;
+        lv2:name "LFO4 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 280 ;
+        lv2:symbol "a_lfo4_shape" ;
+        lv2:name "LFO5 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 281 ;
+        lv2:symbol "a_lfo4_rate" ;
+        lv2:name "LFO5 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 282 ;
+        lv2:symbol "a_lfo4_phase" ;
+        lv2:name "LFO5 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 283 ;
+        lv2:symbol "a_lfo4_magnitude" ;
+        lv2:name "LFO5 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 284 ;
+        lv2:symbol "a_lfo4_deform" ;
+        lv2:name "LFO5 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 285 ;
+        lv2:symbol "a_lfo4_trigmode" ;
+        lv2:name "LFO5 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 286 ;
+        lv2:symbol "a_lfo4_unipolar" ;
+        lv2:name "LFO5 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 287 ;
+        lv2:symbol "a_lfo4_delay" ;
+        lv2:name "LFO5 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 288 ;
+        lv2:symbol "a_lfo4_attack" ;
+        lv2:name "LFO5 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 289 ;
+        lv2:symbol "a_lfo4_hold" ;
+        lv2:name "LFO5 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 290 ;
+        lv2:symbol "a_lfo4_decay" ;
+        lv2:name "LFO5 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 291 ;
+        lv2:symbol "a_lfo4_sustain" ;
+        lv2:name "LFO5 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 292 ;
+        lv2:symbol "a_lfo4_release" ;
+        lv2:name "LFO5 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 293 ;
+        lv2:symbol "a_lfo5_shape" ;
+        lv2:name "LFO6 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 294 ;
+        lv2:symbol "a_lfo5_rate" ;
+        lv2:name "LFO6 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 295 ;
+        lv2:symbol "a_lfo5_phase" ;
+        lv2:name "LFO6 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 296 ;
+        lv2:symbol "a_lfo5_magnitude" ;
+        lv2:name "LFO6 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 297 ;
+        lv2:symbol "a_lfo5_deform" ;
+        lv2:name "LFO6 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 298 ;
+        lv2:symbol "a_lfo5_trigmode" ;
+        lv2:name "LFO6 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 299 ;
+        lv2:symbol "a_lfo5_unipolar" ;
+        lv2:name "LFO6 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 300 ;
+        lv2:symbol "a_lfo5_delay" ;
+        lv2:name "LFO6 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 301 ;
+        lv2:symbol "a_lfo5_attack" ;
+        lv2:name "LFO6 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 302 ;
+        lv2:symbol "a_lfo5_hold" ;
+        lv2:name "LFO6 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 303 ;
+        lv2:symbol "a_lfo5_decay" ;
+        lv2:name "LFO6 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 304 ;
+        lv2:symbol "a_lfo5_sustain" ;
+        lv2:name "LFO6 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 305 ;
+        lv2:symbol "a_lfo5_release" ;
+        lv2:name "LFO6 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 306 ;
+        lv2:symbol "a_lfo6_shape" ;
+        lv2:name "SLFO1 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 307 ;
+        lv2:symbol "a_lfo6_rate" ;
+        lv2:name "SLFO1 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 308 ;
+        lv2:symbol "a_lfo6_phase" ;
+        lv2:name "SLFO1 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 309 ;
+        lv2:symbol "a_lfo6_magnitude" ;
+        lv2:name "SLFO1 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 310 ;
+        lv2:symbol "a_lfo6_deform" ;
+        lv2:name "SLFO1 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 311 ;
+        lv2:symbol "a_lfo6_trigmode" ;
+        lv2:name "SLFO1 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 312 ;
+        lv2:symbol "a_lfo6_unipolar" ;
+        lv2:name "SLFO1 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 313 ;
+        lv2:symbol "a_lfo6_delay" ;
+        lv2:name "SLFO1 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 314 ;
+        lv2:symbol "a_lfo6_attack" ;
+        lv2:name "SLFO1 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 315 ;
+        lv2:symbol "a_lfo6_hold" ;
+        lv2:name "SLFO1 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 316 ;
+        lv2:symbol "a_lfo6_decay" ;
+        lv2:name "SLFO1 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 317 ;
+        lv2:symbol "a_lfo6_sustain" ;
+        lv2:name "SLFO1 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 318 ;
+        lv2:symbol "a_lfo6_release" ;
+        lv2:name "SLFO1 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 319 ;
+        lv2:symbol "a_lfo7_shape" ;
+        lv2:name "SLFO2 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 320 ;
+        lv2:symbol "a_lfo7_rate" ;
+        lv2:name "SLFO2 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 321 ;
+        lv2:symbol "a_lfo7_phase" ;
+        lv2:name "SLFO2 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 322 ;
+        lv2:symbol "a_lfo7_magnitude" ;
+        lv2:name "SLFO2 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 323 ;
+        lv2:symbol "a_lfo7_deform" ;
+        lv2:name "SLFO2 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 324 ;
+        lv2:symbol "a_lfo7_trigmode" ;
+        lv2:name "SLFO2 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 325 ;
+        lv2:symbol "a_lfo7_unipolar" ;
+        lv2:name "SLFO2 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 326 ;
+        lv2:symbol "a_lfo7_delay" ;
+        lv2:name "SLFO2 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 327 ;
+        lv2:symbol "a_lfo7_attack" ;
+        lv2:name "SLFO2 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 328 ;
+        lv2:symbol "a_lfo7_hold" ;
+        lv2:name "SLFO2 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 329 ;
+        lv2:symbol "a_lfo7_decay" ;
+        lv2:name "SLFO2 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 330 ;
+        lv2:symbol "a_lfo7_sustain" ;
+        lv2:name "SLFO2 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 331 ;
+        lv2:symbol "a_lfo7_release" ;
+        lv2:name "SLFO2 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 332 ;
+        lv2:symbol "a_lfo8_shape" ;
+        lv2:name "SLFO3 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 333 ;
+        lv2:symbol "a_lfo8_rate" ;
+        lv2:name "SLFO3 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 334 ;
+        lv2:symbol "a_lfo8_phase" ;
+        lv2:name "SLFO3 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 335 ;
+        lv2:symbol "a_lfo8_magnitude" ;
+        lv2:name "SLFO3 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 336 ;
+        lv2:symbol "a_lfo8_deform" ;
+        lv2:name "SLFO3 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 337 ;
+        lv2:symbol "a_lfo8_trigmode" ;
+        lv2:name "SLFO3 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 338 ;
+        lv2:symbol "a_lfo8_unipolar" ;
+        lv2:name "SLFO3 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 339 ;
+        lv2:symbol "a_lfo8_delay" ;
+        lv2:name "SLFO3 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 340 ;
+        lv2:symbol "a_lfo8_attack" ;
+        lv2:name "SLFO3 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 341 ;
+        lv2:symbol "a_lfo8_hold" ;
+        lv2:name "SLFO3 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 342 ;
+        lv2:symbol "a_lfo8_decay" ;
+        lv2:name "SLFO3 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 343 ;
+        lv2:symbol "a_lfo8_sustain" ;
+        lv2:name "SLFO3 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 344 ;
+        lv2:symbol "a_lfo8_release" ;
+        lv2:name "SLFO3 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 345 ;
+        lv2:symbol "a_lfo9_shape" ;
+        lv2:name "SLFO4 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 346 ;
+        lv2:symbol "a_lfo9_rate" ;
+        lv2:name "SLFO4 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 347 ;
+        lv2:symbol "a_lfo9_phase" ;
+        lv2:name "SLFO4 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 348 ;
+        lv2:symbol "a_lfo9_magnitude" ;
+        lv2:name "SLFO4 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 349 ;
+        lv2:symbol "a_lfo9_deform" ;
+        lv2:name "SLFO4 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 350 ;
+        lv2:symbol "a_lfo9_trigmode" ;
+        lv2:name "SLFO4 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 351 ;
+        lv2:symbol "a_lfo9_unipolar" ;
+        lv2:name "SLFO4 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 352 ;
+        lv2:symbol "a_lfo9_delay" ;
+        lv2:name "SLFO4 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 353 ;
+        lv2:symbol "a_lfo9_attack" ;
+        lv2:name "SLFO4 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 354 ;
+        lv2:symbol "a_lfo9_hold" ;
+        lv2:name "SLFO4 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 355 ;
+        lv2:symbol "a_lfo9_decay" ;
+        lv2:name "SLFO4 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 356 ;
+        lv2:symbol "a_lfo9_sustain" ;
+        lv2:name "SLFO4 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 357 ;
+        lv2:symbol "a_lfo9_release" ;
+        lv2:name "SLFO4 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 358 ;
+        lv2:symbol "a_lfo10_shape" ;
+        lv2:name "SLFO5 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 359 ;
+        lv2:symbol "a_lfo10_rate" ;
+        lv2:name "SLFO5 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 360 ;
+        lv2:symbol "a_lfo10_phase" ;
+        lv2:name "SLFO5 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 361 ;
+        lv2:symbol "a_lfo10_magnitude" ;
+        lv2:name "SLFO5 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 362 ;
+        lv2:symbol "a_lfo10_deform" ;
+        lv2:name "SLFO5 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 363 ;
+        lv2:symbol "a_lfo10_trigmode" ;
+        lv2:name "SLFO5 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 364 ;
+        lv2:symbol "a_lfo10_unipolar" ;
+        lv2:name "SLFO5 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 365 ;
+        lv2:symbol "a_lfo10_delay" ;
+        lv2:name "SLFO5 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 366 ;
+        lv2:symbol "a_lfo10_attack" ;
+        lv2:name "SLFO5 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 367 ;
+        lv2:symbol "a_lfo10_hold" ;
+        lv2:name "SLFO5 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 368 ;
+        lv2:symbol "a_lfo10_decay" ;
+        lv2:name "SLFO5 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 369 ;
+        lv2:symbol "a_lfo10_sustain" ;
+        lv2:name "SLFO5 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 370 ;
+        lv2:symbol "a_lfo10_release" ;
+        lv2:name "SLFO5 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 371 ;
+        lv2:symbol "a_lfo11_shape" ;
+        lv2:name "SLFO6 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 372 ;
+        lv2:symbol "a_lfo11_rate" ;
+        lv2:name "SLFO6 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 373 ;
+        lv2:symbol "a_lfo11_phase" ;
+        lv2:name "SLFO6 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 374 ;
+        lv2:symbol "a_lfo11_magnitude" ;
+        lv2:name "SLFO6 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 375 ;
+        lv2:symbol "a_lfo11_deform" ;
+        lv2:name "SLFO6 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 376 ;
+        lv2:symbol "a_lfo11_trigmode" ;
+        lv2:name "SLFO6 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 377 ;
+        lv2:symbol "a_lfo11_unipolar" ;
+        lv2:name "SLFO6 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 378 ;
+        lv2:symbol "a_lfo11_delay" ;
+        lv2:name "SLFO6 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 379 ;
+        lv2:symbol "a_lfo11_attack" ;
+        lv2:name "SLFO6 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 380 ;
+        lv2:symbol "a_lfo11_hold" ;
+        lv2:name "SLFO6 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 381 ;
+        lv2:symbol "a_lfo11_decay" ;
+        lv2:name "SLFO6 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 382 ;
+        lv2:symbol "a_lfo11_sustain" ;
+        lv2:name "SLFO6 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 383 ;
+        lv2:symbol "a_lfo11_release" ;
+        lv2:name "SLFO6 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 384 ;
+        lv2:symbol "b_octave" ;
+        lv2:name "Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 385 ;
+        lv2:symbol "b_pitch" ;
+        lv2:name "Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 386 ;
+        lv2:symbol "b_portamento" ;
+        lv2:name "Portamento" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 387 ;
+        lv2:symbol "b_osc1_type" ;
+        lv2:name "Osc1 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 388 ;
+        lv2:symbol "b_osc1_octave" ;
+        lv2:name "Osc1 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 389 ;
+        lv2:symbol "b_osc1_pitch" ;
+        lv2:name "Osc1 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 390 ;
+        lv2:symbol "b_osc1_param0" ;
+        lv2:name "Osc1 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 391 ;
+        lv2:symbol "b_osc1_param1" ;
+        lv2:name "Osc1 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 392 ;
+        lv2:symbol "b_osc1_param2" ;
+        lv2:name "Osc1 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 393 ;
+        lv2:symbol "b_osc1_param3" ;
+        lv2:name "Osc1 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 394 ;
+        lv2:symbol "b_osc1_param4" ;
+        lv2:name "Osc1 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 395 ;
+        lv2:symbol "b_osc1_param5" ;
+        lv2:name "Osc1 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 396 ;
+        lv2:symbol "b_osc1_param6" ;
+        lv2:name "Osc1 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 397 ;
+        lv2:symbol "b_osc1_keytrack" ;
+        lv2:name "Osc1 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 398 ;
+        lv2:symbol "b_osc1_retrigger" ;
+        lv2:name "Osc1 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 399 ;
+        lv2:symbol "b_osc2_type" ;
+        lv2:name "Osc2 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 400 ;
+        lv2:symbol "b_osc2_octave" ;
+        lv2:name "Osc2 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 401 ;
+        lv2:symbol "b_osc2_pitch" ;
+        lv2:name "Osc2 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 402 ;
+        lv2:symbol "b_osc2_param0" ;
+        lv2:name "Osc2 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 403 ;
+        lv2:symbol "b_osc2_param1" ;
+        lv2:name "Osc2 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 404 ;
+        lv2:symbol "b_osc2_param2" ;
+        lv2:name "Osc2 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 405 ;
+        lv2:symbol "b_osc2_param3" ;
+        lv2:name "Osc2 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 406 ;
+        lv2:symbol "b_osc2_param4" ;
+        lv2:name "Osc2 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 407 ;
+        lv2:symbol "b_osc2_param5" ;
+        lv2:name "Osc2 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 408 ;
+        lv2:symbol "b_osc2_param6" ;
+        lv2:name "Osc2 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 409 ;
+        lv2:symbol "b_osc2_keytrack" ;
+        lv2:name "Osc2 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 410 ;
+        lv2:symbol "b_osc2_retrigger" ;
+        lv2:name "Osc2 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 411 ;
+        lv2:symbol "b_osc3_type" ;
+        lv2:name "Osc3 Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 412 ;
+        lv2:symbol "b_osc3_octave" ;
+        lv2:name "Osc3 Octave" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 413 ;
+        lv2:symbol "b_osc3_pitch" ;
+        lv2:name "Osc3 Pitch" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 414 ;
+        lv2:symbol "b_osc3_param0" ;
+        lv2:name "Osc3 Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 415 ;
+        lv2:symbol "b_osc3_param1" ;
+        lv2:name "Osc3 Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 416 ;
+        lv2:symbol "b_osc3_param2" ;
+        lv2:name "Osc3 Sub Width" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 417 ;
+        lv2:symbol "b_osc3_param3" ;
+        lv2:name "Osc3 Sub Level" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 418 ;
+        lv2:symbol "b_osc3_param4" ;
+        lv2:name "Osc3 Sync" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 419 ;
+        lv2:symbol "b_osc3_param5" ;
+        lv2:name "Osc3 Uni Spread" ;
+        lv2:default 0.20000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 420 ;
+        lv2:symbol "b_osc3_param6" ;
+        lv2:name "Osc3 Uni Count" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 421 ;
+        lv2:symbol "b_osc3_keytrack" ;
+        lv2:name "Osc3 Keytrack" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 422 ;
+        lv2:symbol "b_osc3_retrigger" ;
+        lv2:name "Osc3 Retrigger" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 423 ;
+        lv2:symbol "b_polymode" ;
+        lv2:name "Polymode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 424 ;
+        lv2:symbol "b_fm_switch" ;
+        lv2:name "FM Routing" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 425 ;
+        lv2:symbol "b_fm_depth" ;
+        lv2:name "FM Depth" ;
+        lv2:default 0.33333334 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 426 ;
+        lv2:symbol "b_drift" ;
+        lv2:name "Osc Drift" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 427 ;
+        lv2:symbol "b_noisecol" ;
+        lv2:name "Noise Color" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 428 ;
+        lv2:symbol "b_ktrkroot" ;
+        lv2:name "Keytrack Root Key" ;
+        lv2:default 0.47271654 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 429 ;
+        lv2:symbol "b_volume" ;
+        lv2:name "Volume" ;
+        lv2:default 0.89089900 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 430 ;
+        lv2:symbol "b_pan" ;
+        lv2:name "Pan" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 431 ;
+        lv2:symbol "b_pan2" ;
+        lv2:name "Width" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 432 ;
+        lv2:symbol "b_send_fx_1" ;
+        lv2:name "FX1 Send" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 433 ;
+        lv2:symbol "b_send_fx_2" ;
+        lv2:name "FX2 Send" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 434 ;
+        lv2:symbol "b_level_o1" ;
+        lv2:name "Osc1 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 435 ;
+        lv2:symbol "b_mute_o1" ;
+        lv2:name "Osc1 Mute" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 436 ;
+        lv2:symbol "b_solo_o1" ;
+        lv2:name "Osc1 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 437 ;
+        lv2:symbol "b_route_o1" ;
+        lv2:name "Osc1 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 438 ;
+        lv2:symbol "b_level_o2" ;
+        lv2:name "Osc2 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 439 ;
+        lv2:symbol "b_mute_o2" ;
+        lv2:name "Osc2 Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 440 ;
+        lv2:symbol "b_solo_o2" ;
+        lv2:name "Osc2 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 441 ;
+        lv2:symbol "b_route_o2" ;
+        lv2:name "Osc2 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 442 ;
+        lv2:symbol "b_level_o3" ;
+        lv2:name "Osc3 Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 443 ;
+        lv2:symbol "b_mute_o3" ;
+        lv2:name "Osc3 Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 444 ;
+        lv2:symbol "b_solo_o3" ;
+        lv2:name "Osc3 Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 445 ;
+        lv2:symbol "b_route_o3" ;
+        lv2:name "Osc3 Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 446 ;
+        lv2:symbol "b_level_ring12" ;
+        lv2:name "Ring Level 1x2" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 447 ;
+        lv2:symbol "b_mute_ring12" ;
+        lv2:name "Ring Mute 1x2" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 448 ;
+        lv2:symbol "b_solo_ring12" ;
+        lv2:name "Ring Solo 1x2" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 449 ;
+        lv2:symbol "b_route_ring12" ;
+        lv2:name "Ring Route 1x2" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 450 ;
+        lv2:symbol "b_level_ring23" ;
+        lv2:name "Ring Level 2x3" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 451 ;
+        lv2:symbol "b_mute_ring23" ;
+        lv2:name "Ring Mute 2x3" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 452 ;
+        lv2:symbol "b_solo_ring23" ;
+        lv2:name "Ring Solo 2x3" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 453 ;
+        lv2:symbol "b_route_ring23" ;
+        lv2:name "Ring Route 2x3" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 454 ;
+        lv2:symbol "b_level_noise" ;
+        lv2:name "Noise Level" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 455 ;
+        lv2:symbol "b_mute_noise" ;
+        lv2:name "Noise Mute" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 456 ;
+        lv2:symbol "b_solo_noise" ;
+        lv2:name "Noise Solo" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 457 ;
+        lv2:symbol "b_route_noise" ;
+        lv2:name "Noise Route" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 458 ;
+        lv2:symbol "b_level_pfg" ;
+        lv2:name "Pre-Filter Gain" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 459 ;
+        lv2:symbol "b_pbrange_up" ;
+        lv2:name "Pitch Bend Range (up)" ;
+        lv2:default 0.08750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 460 ;
+        lv2:symbol "b_pbrange_dn" ;
+        lv2:name "Pitch Bend Range (down)" ;
+        lv2:default 0.08750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 461 ;
+        lv2:symbol "b_vca_level" ;
+        lv2:name "Gain" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 462 ;
+        lv2:symbol "b_vca_velsense" ;
+        lv2:name "Velocity > Gain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 463 ;
+        lv2:symbol "b_feedback" ;
+        lv2:name "Feedback" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 464 ;
+        lv2:symbol "b_fb_config" ;
+        lv2:name "Filter Configuration" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 465 ;
+        lv2:symbol "b_f_balance" ;
+        lv2:name "Filter Balance" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 466 ;
+        lv2:symbol "b_lowcut" ;
+        lv2:name "High Pass" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 467 ;
+        lv2:symbol "b_ws_type" ;
+        lv2:name "Waveshaper Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 468 ;
+        lv2:symbol "b_ws_drive" ;
+        lv2:name "Waveshaper Drive" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 469 ;
+        lv2:symbol "b_filter1_type" ;
+        lv2:name "F1 Filter Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 470 ;
+        lv2:symbol "b_filter1_subtype" ;
+        lv2:name "F1 Filter Subtype" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 471 ;
+        lv2:symbol "b_filter1_cutoff" ;
+        lv2:name "F1 Cutoff" ;
+        lv2:default 0.48461539 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 472 ;
+        lv2:symbol "b_filter1_resonance" ;
+        lv2:name "F1 Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 473 ;
+        lv2:symbol "b_filter1_envmod" ;
+        lv2:name "F1 Envmod" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 474 ;
+        lv2:symbol "b_filter1_keytrack" ;
+        lv2:name "F1 Keytrack" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 475 ;
+        lv2:symbol "b_filter2_type" ;
+        lv2:name "F2 Filter Type" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 476 ;
+        lv2:symbol "b_filter2_subtype" ;
+        lv2:name "F2 Filter Subtype" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 477 ;
+        lv2:symbol "b_filter2_cutoff" ;
+        lv2:name "F2 Cutoff" ;
+        lv2:default 0.48461539 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 478 ;
+        lv2:symbol "b_f2_cf_is_offset" ;
+        lv2:name "Is Offset to F1" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 479 ;
+        lv2:symbol "b_filter2_resonance" ;
+        lv2:name "F2 Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 480 ;
+        lv2:symbol "b_f2_link_resonance" ;
+        lv2:name "Link Resonance" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 481 ;
+        lv2:symbol "b_filter2_envmod" ;
+        lv2:name "F2 Envmod" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 482 ;
+        lv2:symbol "b_filter2_keytrack" ;
+        lv2:name "F2 Keytrack" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 483 ;
+        lv2:symbol "b_env1_attack" ;
+        lv2:name "AEG Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 484 ;
+        lv2:symbol "b_env1_attack_shape" ;
+        lv2:name "AEG Attack Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 485 ;
+        lv2:symbol "b_env1_decay" ;
+        lv2:name "AEG Decay" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 486 ;
+        lv2:symbol "b_env1_decay_shape" ;
+        lv2:name "AEG Decay Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 487 ;
+        lv2:symbol "b_env1_sustain" ;
+        lv2:name "AEG Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 488 ;
+        lv2:symbol "b_env1_release" ;
+        lv2:name "AEG Release" ;
+        lv2:default 0.23076923 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 489 ;
+        lv2:symbol "b_env1_release_shape" ;
+        lv2:name "AEG Release Shape" ;
+        lv2:default 0.99500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 490 ;
+        lv2:symbol "b_env1_mode" ;
+        lv2:name "AEG Mode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 491 ;
+        lv2:symbol "b_env2_attack" ;
+        lv2:name "FEG Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 492 ;
+        lv2:symbol "b_env2_attack_shape" ;
+        lv2:name "FEG Attack Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 493 ;
+        lv2:symbol "b_env2_decay" ;
+        lv2:name "FEG Decay" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 494 ;
+        lv2:symbol "b_env2_decay_shape" ;
+        lv2:name "FEG Decay Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 495 ;
+        lv2:symbol "b_env2_sustain" ;
+        lv2:name "FEG Sustain" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 496 ;
+        lv2:symbol "b_env2_release" ;
+        lv2:name "FEG Release" ;
+        lv2:default 0.46153846 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 497 ;
+        lv2:symbol "b_env2_release_shape" ;
+        lv2:name "FEG Release Shape" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 498 ;
+        lv2:symbol "b_env2_mode" ;
+        lv2:name "FEG Mode" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 499 ;
+        lv2:symbol "b_lfo0_shape" ;
+        lv2:name "LFO1 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 500 ;
+        lv2:symbol "b_lfo0_rate" ;
+        lv2:name "LFO1 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 501 ;
+        lv2:symbol "b_lfo0_phase" ;
+        lv2:name "LFO1 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 502 ;
+        lv2:symbol "b_lfo0_magnitude" ;
+        lv2:name "LFO1 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 503 ;
+        lv2:symbol "b_lfo0_deform" ;
+        lv2:name "LFO1 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 504 ;
+        lv2:symbol "b_lfo0_trigmode" ;
+        lv2:name "LFO1 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 505 ;
+        lv2:symbol "b_lfo0_unipolar" ;
+        lv2:name "LFO1 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 506 ;
+        lv2:symbol "b_lfo0_delay" ;
+        lv2:name "LFO1 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 507 ;
+        lv2:symbol "b_lfo0_attack" ;
+        lv2:name "LFO1 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 508 ;
+        lv2:symbol "b_lfo0_hold" ;
+        lv2:name "LFO1 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 509 ;
+        lv2:symbol "b_lfo0_decay" ;
+        lv2:name "LFO1 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 510 ;
+        lv2:symbol "b_lfo0_sustain" ;
+        lv2:name "LFO1 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 511 ;
+        lv2:symbol "b_lfo0_release" ;
+        lv2:name "LFO1 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 512 ;
+        lv2:symbol "b_lfo1_shape" ;
+        lv2:name "LFO2 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 513 ;
+        lv2:symbol "b_lfo1_rate" ;
+        lv2:name "LFO2 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 514 ;
+        lv2:symbol "b_lfo1_phase" ;
+        lv2:name "LFO2 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 515 ;
+        lv2:symbol "b_lfo1_magnitude" ;
+        lv2:name "LFO2 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 516 ;
+        lv2:symbol "b_lfo1_deform" ;
+        lv2:name "LFO2 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 517 ;
+        lv2:symbol "b_lfo1_trigmode" ;
+        lv2:name "LFO2 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 518 ;
+        lv2:symbol "b_lfo1_unipolar" ;
+        lv2:name "LFO2 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 519 ;
+        lv2:symbol "b_lfo1_delay" ;
+        lv2:name "LFO2 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 520 ;
+        lv2:symbol "b_lfo1_attack" ;
+        lv2:name "LFO2 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 521 ;
+        lv2:symbol "b_lfo1_hold" ;
+        lv2:name "LFO2 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 522 ;
+        lv2:symbol "b_lfo1_decay" ;
+        lv2:name "LFO2 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 523 ;
+        lv2:symbol "b_lfo1_sustain" ;
+        lv2:name "LFO2 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 524 ;
+        lv2:symbol "b_lfo1_release" ;
+        lv2:name "LFO2 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 525 ;
+        lv2:symbol "b_lfo2_shape" ;
+        lv2:name "LFO3 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 526 ;
+        lv2:symbol "b_lfo2_rate" ;
+        lv2:name "LFO3 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 527 ;
+        lv2:symbol "b_lfo2_phase" ;
+        lv2:name "LFO3 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 528 ;
+        lv2:symbol "b_lfo2_magnitude" ;
+        lv2:name "LFO3 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 529 ;
+        lv2:symbol "b_lfo2_deform" ;
+        lv2:name "LFO3 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 530 ;
+        lv2:symbol "b_lfo2_trigmode" ;
+        lv2:name "LFO3 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 531 ;
+        lv2:symbol "b_lfo2_unipolar" ;
+        lv2:name "LFO3 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 532 ;
+        lv2:symbol "b_lfo2_delay" ;
+        lv2:name "LFO3 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 533 ;
+        lv2:symbol "b_lfo2_attack" ;
+        lv2:name "LFO3 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 534 ;
+        lv2:symbol "b_lfo2_hold" ;
+        lv2:name "LFO3 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 535 ;
+        lv2:symbol "b_lfo2_decay" ;
+        lv2:name "LFO3 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 536 ;
+        lv2:symbol "b_lfo2_sustain" ;
+        lv2:name "LFO3 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 537 ;
+        lv2:symbol "b_lfo2_release" ;
+        lv2:name "LFO3 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 538 ;
+        lv2:symbol "b_lfo3_shape" ;
+        lv2:name "LFO4 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 539 ;
+        lv2:symbol "b_lfo3_rate" ;
+        lv2:name "LFO4 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 540 ;
+        lv2:symbol "b_lfo3_phase" ;
+        lv2:name "LFO4 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 541 ;
+        lv2:symbol "b_lfo3_magnitude" ;
+        lv2:name "LFO4 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 542 ;
+        lv2:symbol "b_lfo3_deform" ;
+        lv2:name "LFO4 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 543 ;
+        lv2:symbol "b_lfo3_trigmode" ;
+        lv2:name "LFO4 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 544 ;
+        lv2:symbol "b_lfo3_unipolar" ;
+        lv2:name "LFO4 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 545 ;
+        lv2:symbol "b_lfo3_delay" ;
+        lv2:name "LFO4 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 546 ;
+        lv2:symbol "b_lfo3_attack" ;
+        lv2:name "LFO4 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 547 ;
+        lv2:symbol "b_lfo3_hold" ;
+        lv2:name "LFO4 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 548 ;
+        lv2:symbol "b_lfo3_decay" ;
+        lv2:name "LFO4 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 549 ;
+        lv2:symbol "b_lfo3_sustain" ;
+        lv2:name "LFO4 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 550 ;
+        lv2:symbol "b_lfo3_release" ;
+        lv2:name "LFO4 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 551 ;
+        lv2:symbol "b_lfo4_shape" ;
+        lv2:name "LFO5 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 552 ;
+        lv2:symbol "b_lfo4_rate" ;
+        lv2:name "LFO5 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 553 ;
+        lv2:symbol "b_lfo4_phase" ;
+        lv2:name "LFO5 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 554 ;
+        lv2:symbol "b_lfo4_magnitude" ;
+        lv2:name "LFO5 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 555 ;
+        lv2:symbol "b_lfo4_deform" ;
+        lv2:name "LFO5 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 556 ;
+        lv2:symbol "b_lfo4_trigmode" ;
+        lv2:name "LFO5 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 557 ;
+        lv2:symbol "b_lfo4_unipolar" ;
+        lv2:name "LFO5 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 558 ;
+        lv2:symbol "b_lfo4_delay" ;
+        lv2:name "LFO5 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 559 ;
+        lv2:symbol "b_lfo4_attack" ;
+        lv2:name "LFO5 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 560 ;
+        lv2:symbol "b_lfo4_hold" ;
+        lv2:name "LFO5 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 561 ;
+        lv2:symbol "b_lfo4_decay" ;
+        lv2:name "LFO5 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 562 ;
+        lv2:symbol "b_lfo4_sustain" ;
+        lv2:name "LFO5 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 563 ;
+        lv2:symbol "b_lfo4_release" ;
+        lv2:name "LFO5 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 564 ;
+        lv2:symbol "b_lfo5_shape" ;
+        lv2:name "LFO6 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 565 ;
+        lv2:symbol "b_lfo5_rate" ;
+        lv2:name "LFO6 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 566 ;
+        lv2:symbol "b_lfo5_phase" ;
+        lv2:name "LFO6 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 567 ;
+        lv2:symbol "b_lfo5_magnitude" ;
+        lv2:name "LFO6 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 568 ;
+        lv2:symbol "b_lfo5_deform" ;
+        lv2:name "LFO6 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 569 ;
+        lv2:symbol "b_lfo5_trigmode" ;
+        lv2:name "LFO6 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 570 ;
+        lv2:symbol "b_lfo5_unipolar" ;
+        lv2:name "LFO6 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 571 ;
+        lv2:symbol "b_lfo5_delay" ;
+        lv2:name "LFO6 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 572 ;
+        lv2:symbol "b_lfo5_attack" ;
+        lv2:name "LFO6 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 573 ;
+        lv2:symbol "b_lfo5_hold" ;
+        lv2:name "LFO6 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 574 ;
+        lv2:symbol "b_lfo5_decay" ;
+        lv2:name "LFO6 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 575 ;
+        lv2:symbol "b_lfo5_sustain" ;
+        lv2:name "LFO6 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 576 ;
+        lv2:symbol "b_lfo5_release" ;
+        lv2:name "LFO6 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 577 ;
+        lv2:symbol "b_lfo6_shape" ;
+        lv2:name "SLFO1 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 578 ;
+        lv2:symbol "b_lfo6_rate" ;
+        lv2:name "SLFO1 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 579 ;
+        lv2:symbol "b_lfo6_phase" ;
+        lv2:name "SLFO1 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 580 ;
+        lv2:symbol "b_lfo6_magnitude" ;
+        lv2:name "SLFO1 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 581 ;
+        lv2:symbol "b_lfo6_deform" ;
+        lv2:name "SLFO1 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 582 ;
+        lv2:symbol "b_lfo6_trigmode" ;
+        lv2:name "SLFO1 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 583 ;
+        lv2:symbol "b_lfo6_unipolar" ;
+        lv2:name "SLFO1 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 584 ;
+        lv2:symbol "b_lfo6_delay" ;
+        lv2:name "SLFO1 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 585 ;
+        lv2:symbol "b_lfo6_attack" ;
+        lv2:name "SLFO1 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 586 ;
+        lv2:symbol "b_lfo6_hold" ;
+        lv2:name "SLFO1 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 587 ;
+        lv2:symbol "b_lfo6_decay" ;
+        lv2:name "SLFO1 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 588 ;
+        lv2:symbol "b_lfo6_sustain" ;
+        lv2:name "SLFO1 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 589 ;
+        lv2:symbol "b_lfo6_release" ;
+        lv2:name "SLFO1 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 590 ;
+        lv2:symbol "b_lfo7_shape" ;
+        lv2:name "SLFO2 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 591 ;
+        lv2:symbol "b_lfo7_rate" ;
+        lv2:name "SLFO2 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 592 ;
+        lv2:symbol "b_lfo7_phase" ;
+        lv2:name "SLFO2 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 593 ;
+        lv2:symbol "b_lfo7_magnitude" ;
+        lv2:name "SLFO2 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 594 ;
+        lv2:symbol "b_lfo7_deform" ;
+        lv2:name "SLFO2 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 595 ;
+        lv2:symbol "b_lfo7_trigmode" ;
+        lv2:name "SLFO2 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 596 ;
+        lv2:symbol "b_lfo7_unipolar" ;
+        lv2:name "SLFO2 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 597 ;
+        lv2:symbol "b_lfo7_delay" ;
+        lv2:name "SLFO2 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 598 ;
+        lv2:symbol "b_lfo7_attack" ;
+        lv2:name "SLFO2 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 599 ;
+        lv2:symbol "b_lfo7_hold" ;
+        lv2:name "SLFO2 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 600 ;
+        lv2:symbol "b_lfo7_decay" ;
+        lv2:name "SLFO2 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 601 ;
+        lv2:symbol "b_lfo7_sustain" ;
+        lv2:name "SLFO2 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 602 ;
+        lv2:symbol "b_lfo7_release" ;
+        lv2:name "SLFO2 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 603 ;
+        lv2:symbol "b_lfo8_shape" ;
+        lv2:name "SLFO3 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 604 ;
+        lv2:symbol "b_lfo8_rate" ;
+        lv2:name "SLFO3 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 605 ;
+        lv2:symbol "b_lfo8_phase" ;
+        lv2:name "SLFO3 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 606 ;
+        lv2:symbol "b_lfo8_magnitude" ;
+        lv2:name "SLFO3 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 607 ;
+        lv2:symbol "b_lfo8_deform" ;
+        lv2:name "SLFO3 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 608 ;
+        lv2:symbol "b_lfo8_trigmode" ;
+        lv2:name "SLFO3 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 609 ;
+        lv2:symbol "b_lfo8_unipolar" ;
+        lv2:name "SLFO3 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 610 ;
+        lv2:symbol "b_lfo8_delay" ;
+        lv2:name "SLFO3 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 611 ;
+        lv2:symbol "b_lfo8_attack" ;
+        lv2:name "SLFO3 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 612 ;
+        lv2:symbol "b_lfo8_hold" ;
+        lv2:name "SLFO3 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 613 ;
+        lv2:symbol "b_lfo8_decay" ;
+        lv2:name "SLFO3 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 614 ;
+        lv2:symbol "b_lfo8_sustain" ;
+        lv2:name "SLFO3 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 615 ;
+        lv2:symbol "b_lfo8_release" ;
+        lv2:name "SLFO3 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 616 ;
+        lv2:symbol "b_lfo9_shape" ;
+        lv2:name "SLFO4 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 617 ;
+        lv2:symbol "b_lfo9_rate" ;
+        lv2:name "SLFO4 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 618 ;
+        lv2:symbol "b_lfo9_phase" ;
+        lv2:name "SLFO4 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 619 ;
+        lv2:symbol "b_lfo9_magnitude" ;
+        lv2:name "SLFO4 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 620 ;
+        lv2:symbol "b_lfo9_deform" ;
+        lv2:name "SLFO4 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 621 ;
+        lv2:symbol "b_lfo9_trigmode" ;
+        lv2:name "SLFO4 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 622 ;
+        lv2:symbol "b_lfo9_unipolar" ;
+        lv2:name "SLFO4 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 623 ;
+        lv2:symbol "b_lfo9_delay" ;
+        lv2:name "SLFO4 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 624 ;
+        lv2:symbol "b_lfo9_attack" ;
+        lv2:name "SLFO4 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 625 ;
+        lv2:symbol "b_lfo9_hold" ;
+        lv2:name "SLFO4 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 626 ;
+        lv2:symbol "b_lfo9_decay" ;
+        lv2:name "SLFO4 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 627 ;
+        lv2:symbol "b_lfo9_sustain" ;
+        lv2:name "SLFO4 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 628 ;
+        lv2:symbol "b_lfo9_release" ;
+        lv2:name "SLFO4 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 629 ;
+        lv2:symbol "b_lfo10_shape" ;
+        lv2:name "SLFO5 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 630 ;
+        lv2:symbol "b_lfo10_rate" ;
+        lv2:name "SLFO5 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 631 ;
+        lv2:symbol "b_lfo10_phase" ;
+        lv2:name "SLFO5 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 632 ;
+        lv2:symbol "b_lfo10_magnitude" ;
+        lv2:name "SLFO5 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 633 ;
+        lv2:symbol "b_lfo10_deform" ;
+        lv2:name "SLFO5 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 634 ;
+        lv2:symbol "b_lfo10_trigmode" ;
+        lv2:name "SLFO5 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 635 ;
+        lv2:symbol "b_lfo10_unipolar" ;
+        lv2:name "SLFO5 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 636 ;
+        lv2:symbol "b_lfo10_delay" ;
+        lv2:name "SLFO5 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 637 ;
+        lv2:symbol "b_lfo10_attack" ;
+        lv2:name "SLFO5 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 638 ;
+        lv2:symbol "b_lfo10_hold" ;
+        lv2:name "SLFO5 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 639 ;
+        lv2:symbol "b_lfo10_decay" ;
+        lv2:name "SLFO5 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 640 ;
+        lv2:symbol "b_lfo10_sustain" ;
+        lv2:name "SLFO5 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 641 ;
+        lv2:symbol "b_lfo10_release" ;
+        lv2:name "SLFO5 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 642 ;
+        lv2:symbol "b_lfo11_shape" ;
+        lv2:name "SLFO6 Shape" ;
+        lv2:default 0.00500000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 643 ;
+        lv2:symbol "b_lfo11_rate" ;
+        lv2:name "SLFO6 Rate" ;
+        lv2:default 0.43750000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 644 ;
+        lv2:symbol "b_lfo11_phase" ;
+        lv2:name "SLFO6 Phase / Shuffle" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 645 ;
+        lv2:symbol "b_lfo11_magnitude" ;
+        lv2:name "SLFO6 Magnitude" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 646 ;
+        lv2:symbol "b_lfo11_deform" ;
+        lv2:name "SLFO6 Deform" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 647 ;
+        lv2:symbol "b_lfo11_trigmode" ;
+        lv2:name "SLFO6 Trigger Mode" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 648 ;
+        lv2:symbol "b_lfo11_unipolar" ;
+        lv2:name "SLFO6 Unipolar" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 649 ;
+        lv2:symbol "b_lfo11_delay" ;
+        lv2:name "SLFO6 Delay" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 650 ;
+        lv2:symbol "b_lfo11_attack" ;
+        lv2:name "SLFO6 Attack" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 651 ;
+        lv2:symbol "b_lfo11_hold" ;
+        lv2:name "SLFO6 Hold" ;
+        lv2:default 0.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 652 ;
+        lv2:symbol "b_lfo11_decay" ;
+        lv2:name "SLFO6 Decay" ;
+        lv2:default 0.61538464 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 653 ;
+        lv2:symbol "b_lfo11_sustain" ;
+        lv2:name "SLFO6 Sustain" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 654 ;
+        lv2:symbol "b_lfo11_release" ;
+        lv2:name "SLFO6 Release" ;
+        lv2:default 1.00000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, lv2:ControlPort ;
+        lv2:index 655 ;
+        lv2:symbol "character" ;
+        lv2:name "Character" ;
+        lv2:default 0.50000000 ;
+        lv2:minimum 0.00000000 ;
+        lv2:maximum 1.00000000 ;
+    ] , [
+        a lv2:InputPort, atom:AtomPort ;
+        lv2:index 656 ;
+        lv2:symbol "events_in" ;
+        lv2:name "Event input" ;
+        rsz:minimumSize 8192 ;
+        atom:bufferType atom:Sequence ;
+        atom:supports midi:MidiEvent,
+                      time:Position ;
+    ] , [
+        a lv2:InputPort, lv2:AudioPort ;
+        lv2:index 657 ;
+        lv2:symbol "audio_in_1" ;
+        lv2:name "Audio input 1" ;
+        lv2:portProperty lv2:connectionOptional ;
+    ] , [
+        a lv2:InputPort, lv2:AudioPort ;
+        lv2:index 658 ;
+        lv2:symbol "audio_in_2" ;
+        lv2:name "Audio input 2" ;
+        lv2:portProperty lv2:connectionOptional ;
+    ] , [
+        a lv2:OutputPort, lv2:AudioPort ;
+        lv2:index 659 ;
+        lv2:symbol "audio_out_1" ;
+        lv2:name "Audio output 1" ;
+    ] , [
+        a lv2:OutputPort, lv2:AudioPort ;
+        lv2:index 660 ;
+        lv2:symbol "audio_out_2" ;
+        lv2:name "Audio output 2" ;
+    ] ;
+    lv2:minorVersion 6 ;
+    lv2:microVersion 6 .
