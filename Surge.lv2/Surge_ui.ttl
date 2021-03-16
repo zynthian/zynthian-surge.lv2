@@ -19,4 +19,5 @@
                         ui:noUserResize ;
     lv2:requiredFeature ui:idleInterface ,
                         <http://lv2plug.in/ns/ext/instance-access> ;
+    opts:supportedOption ui:scaleFactor ;
     lv2:extensionData ui:idleInterface .
